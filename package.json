@@ -1,0 +1,21 @@
+{
+  "name": "megapteka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "sequelize": "^6.21.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "dotenv": "^10.0.0"
+  }
+}

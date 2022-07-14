@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  postgresdb:
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=sergeyl
+      - POSTGRES_PASSWORD=sergeyl
+      - POSTGRES_DB=testdb
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata1:/var/lib/postgresql/data
+  app:
+    depends_on:
+      - postresdb
+    build: ./
+    ports:
+      - '8085:8085'
+    environment:
+      - DB_HOST=postgresdb
+      - DB_USER=sergeyl
+      - DB_PASSWORD=sergeyl
+      - DB_NAME=testdb
+      - DB_PORT=5432
+    stdin_open: true
+    tty: true
+volumes:
+  pgdata1: {}
